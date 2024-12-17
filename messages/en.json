@@ -1,0 +1,76 @@
+{
+    "navbar":{
+        "home":"Home"
+    },
+    "chatbot": {
+        "header": "Chat with us",
+        "intro": "Hi, message us with any questions, we're happy to help!",
+        "greetings": "Hello! I’m Pandora, your virtual assistant with a special touch. I’m here to provide you with creative solutions and accompany you on your journey 24/7. 💡✨ Would you like to explore our amazing services together? I’m excited to help you!",
+        "start_chat": "Start Chat",
+        "FAQ": "FAQ",
+        "about_us": "About Us",
+        "our_services": "Our Services",
+        "meeting": "Schedule a Meeting",
+        "write_message": "write message...",
+        "delivered": "Delivered",
+        "see": "See",
+        "you":"you"
+    },
+    "login":{
+        "title":"Hi, Welcome Back",
+        "sub_title":"Enter your credentials to continue",
+        "credentials":{
+            "email":"Email",
+            "error_email":"Please enter a valid email.",
+            "password":"Password",
+            "error_password":"The password must be at least 8 characters long, including an uppercase letter, a lowercase letter, and a number.",
+            "error_login":"Login error. Please verify your credentials.",
+            "credentials_warnning":"Please fill in all the fields."
+        },
+        "button":"login",
+        "loading":"loading...",
+        "info_login":"Don't have an account?",
+        "sign_up":"Sign Up"
+    },
+    "blog":{
+        "prompt":"Prompt",
+        "title":"Title",
+        "form":{
+            "article_name":"Article Name",
+            "article_name_required":{
+                "en":"Name in English is required",
+                "es":"Name in Spanish is required",
+                "fr":"Name in French is required",
+                "de":"Name in German is required",
+                "it":"Name in Italian is required"
+            },
+            "article_content_required":{
+                "en":"Content in English is required",
+                "es":"Content in Spanish is required",
+                "fr":"Content in French is required",
+                "de":"Content in German is required",
+                "it":"Content in Italian is required"
+            },
+            "translations_rquiered":"Translations are required",
+            "article_content":"Article Content",
+            "category":"Article Category",
+            "category_required":"Category is required",
+            "select_category":"Select a category",
+            "image":"Article Image",
+            "image_required":"Image is required",
+            "tags":"Tags",
+            "tag_required":"Each tag is required",
+
+            "author":"Author",
+            "image_author":"Image Author",
+            "submit":"Create",
+            "update":"Update",
+            "delete":"Delete",
+            "cancel":"Cancel",
+            "error":"Error"
+
+        }
+
+    }
+  
+}

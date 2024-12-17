@@ -1,0 +1,19 @@
+{
+    "navbar":{
+        "home":"Accueil"
+    },
+    "chatbot": {
+        "header": "Discutez avec nous",
+        "intro": "Salut, envoyez-nous vos questions, nous sommes heureux de vous aider !",
+        "greetings": "Bonjour ! Je suis Pandora, votre assistante virtuelle avec une touche spéciale. Je suis ici pour vous fournir des solutions créatives et vous accompagner dans votre parcours 24/7. 💡✨ Souhaitez-vous explorer ensemble nos services incroyables ? Je suis impatiente de vous aider !",
+        "start_chat": "Démarrer le chat",
+        "FAQ": "FAQ",
+        "about_us": "À propos de nous",
+        "our_services": "Nos Services",
+        "meeting": "Planifier une Réunion",
+        "write_message": "écrire un message...",
+        "delivered": "Livré",
+        "see": "Voir",
+        "you": "toi"
+    }
+}
