@@ -12,6 +12,8 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: any;
 }) {
+
+  
   // Aquí simplemente destructuramos el locale sin await
   const { locale } = await params;
   // Obtener los mensajes correspondientes al locale
