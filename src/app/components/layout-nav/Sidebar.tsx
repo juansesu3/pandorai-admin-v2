@@ -8,6 +8,16 @@ import {
 
   FiChevronDown,
 } from "react-icons/fi";
+import { GrDashboard } from "react-icons/gr";
+
+import { GiSwordBrandish } from "react-icons/gi";
+
+import { IoDocumentTextOutline } from "react-icons/io5";
+import { GiProcessor } from "react-icons/gi";
+
+import { TbWorldStar } from "react-icons/tb";
+import { HiUserGroup } from "react-icons/hi2";
+import { GoHubot } from "react-icons/go";
 import { useTheme } from "next-themes";
 import {
   MdDarkMode,
@@ -73,7 +83,7 @@ const Sidebar: React.FC<SidebarProps> = ({
     },
     {
       name: "Agents",
-      icon: FiUser,
+      icon: GoHubot,
       href: "/agents",
       subItems: [
         { name: "List", href: "/agents/list", icon: FiUser },
@@ -82,7 +92,7 @@ const Sidebar: React.FC<SidebarProps> = ({
     },
     {
       name: "Clients",
-      icon: FiSettings,
+      icon: HiUserGroup,
       href: "/clients",
       subItems: [
         { name: "Client List", href: "/clients/list", icon: FiUser },
@@ -91,7 +101,7 @@ const Sidebar: React.FC<SidebarProps> = ({
     },
     {
       name: "Landing Page",
-      icon: FiSettings,
+      icon: TbWorldStar,
       href: "/landing-page",
       subItems: [
         {
@@ -124,20 +134,28 @@ const Sidebar: React.FC<SidebarProps> = ({
     },
     {
       name: "Documentacion",
-      icon: FiSettings,
+      icon: IoDocumentTextOutline,
       href: "/clients",
       subItems: [
         { name: "Client List", href: "/clients/list", icon: FiUser },
         { name: "Add Client", href: "/clients/add", icon: FiUser },
       ],
     },
+    {
+      name: "Automation",
+      icon: GiProcessor,
+      href: "/automation",
+      subItems: [
+        { name: "Makerting", href: "/automation/marketing", icon: GiSwordBrandish },
+        { name: "Stats", href: "/automation/dashboard", icon: GrDashboard },
+      ],
+    },
   ];
 
   return (
     <div
-      className={`${
-        isOpen ? "w-64" : "w-16"
-      } bg-white dark:bg-[#191D23] text-white transition-all duration-300 `}
+      className={`${isOpen ? "w-64" : "w-16"
+        } bg-white dark:bg-[#191D23] text-white transition-all duration-300 `}
     >
       <div className="h-full flex flex-col">
         {/* Logo or icon */}
@@ -174,11 +192,9 @@ const Sidebar: React.FC<SidebarProps> = ({
                         router.push(item.href);
                       }
                     }}
-                    className={`${
-                      isOpen ? "w-60 mx-2" : "w-full"
-                    } p-2 dark:hover:bg-[#262C36]  hover:bg-gray-100 dark:text-[#B8C0CC] text-gray-700 rounded-md flex items-center justify-center transition-all duration-300 ${
-                      isActive ? "bg-gray-100" : ""
-                    }`}
+                    className={`${isOpen ? "w-60 mx-2" : "w-full"
+                      } p-2 dark:hover:bg-[#262C36]  hover:bg-gray-100 dark:text-[#B8C0CC] text-gray-700 rounded-md flex items-center justify-center transition-all duration-300 ${isActive ? "bg-gray-100" : ""
+                      }`}
                   >
                     <div className="flex items-center">
                       <Icon className={`${isOpen ? "mr-3" : "mr-0"}`} />
@@ -187,9 +203,8 @@ const Sidebar: React.FC<SidebarProps> = ({
                     {isOpen && hasSubItems && (
                       <FiChevronDown
                         size={18}
-                        className={`ml-auto text-purple-600 font-bold transition-transform ${
-                          isSubMenuOpen ? "transform rotate-180" : ""
-                        }`}
+                        className={`ml-auto text-purple-600 font-bold transition-transform ${isSubMenuOpen ? "transform rotate-180" : ""
+                          }`}
                       />
                     )}
                   </button>
@@ -204,9 +219,8 @@ const Sidebar: React.FC<SidebarProps> = ({
                           <li key={subItem.name}>
                             <Link
                               href={subItem.href}
-                              className={`flex items-center mr-2 p-2 text-gray-500 hover:text-gray-700 dark:text-[#B8C0CC] hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md ${
-                                isSubItemActive ? "bg-gray-200" : ""
-                              }`}
+                              className={`flex items-center mr-2 p-2 text-gray-500 hover:text-gray-700 dark:text-[#B8C0CC] hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md ${isSubItemActive ? "bg-gray-200" : ""
+                                }`}
                             >
                               <SubIcon className="mr-2" />
                               {subItem.name}
@@ -224,9 +238,8 @@ const Sidebar: React.FC<SidebarProps> = ({
 
         {/* Locale and Theme Toggle */}
         <div
-          className={`flex items-center gap-2 justify-center pb-4 ${
-            isOpen ? "flex-row" : " flex-col"
-          } `}
+          className={`flex items-center gap-2 justify-center pb-4 ${isOpen ? "flex-row" : " flex-col"
+            } `}
         >
           <div className="relative">
             <select
@@ -242,17 +255,15 @@ const Sidebar: React.FC<SidebarProps> = ({
           </div>
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className={`${
-              theme === "dark" ? "bg-gray-600" : "bg-gray-200"
-            } relative inline-flex items-center h-7 rounded-full w-12 border border-neutral-100 dark:border-slate-600  transition-colors focus:outline-none`}
+            className={`${theme === "dark" ? "bg-gray-600" : "bg-gray-200"
+              } relative inline-flex items-center h-7 rounded-full w-12 border border-neutral-100 dark:border-slate-600  transition-colors focus:outline-none`}
           >
             <span className="sr-only">Toggle Dark Mode</span>
             <span
-              className={`${
-                theme === "dark"
+              className={`${theme === "dark"
                   ? "translate-x-6 bg-blue-500"
                   : "translate-x-1 bg-gray-400"
-              } w-5 h-5 transform  rounded-full transition-transform flex items-center justify-center`}
+                } w-5 h-5 transform  rounded-full transition-transform flex items-center justify-center`}
             >
               {theme === "dark" ? (
                 <MdDarkMode className="w-3 h-3 text-yellow-300" />

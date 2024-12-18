@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-
 import ChatWindow from "./ChatWindow";
 import { CgClose } from "react-icons/cg";
 import { useSelector, useDispatch } from "react-redux";
@@ -27,15 +26,13 @@ const UiChatBot = () => {
     <div>
       {/* Botón flotante para abrir/cerrar el chat */}
       <div
-        className={`fixed ${
-          isChatWindowOpen ? "z-50 right-1 bottom-1" : "z-50 right-2 bottom-2"
-        } `}
+        className={`fixed hidden ${isChatWindowOpen ? "z-50 right-1 bottom-1" : "z-50 right-2 bottom-2"
+          } `}
       >
         <div
           onClick={toggleChat}
-          className={` ${
-            isChatWindowOpen ? " hidden" : "rounded-full  p-2"
-          } shadow-lg flex gap-2 items-center justify-center bg-purple-700 hover:bg-purple-600 transition-colors duration-300 cursor-pointer`}
+          className={` ${isChatWindowOpen ? " hidden" : "rounded-full  p-2"
+            } shadow-lg flex gap-2 items-center justify-center bg-purple-700 hover:bg-purple-600 transition-colors duration-300 cursor-pointer`}
         >
           {isChatWindowOpen ? (
             <>
