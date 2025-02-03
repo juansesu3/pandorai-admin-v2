@@ -1,25 +1,33 @@
-'use client'
+// app/your-page/page.tsx
+import type { Metadata } from 'next'
 import React from 'react'
-import { useSelector } from 'react-redux'
-import { RootState } from '@/redux/store'
-import Approved from '@/app/components/automattion/Approved'
-import Editing from '@/app/components/automattion/Editing'
-import IncialCreation from '@/app/components/automattion/IncialCreation'
-import Loading from '@/app/components/automattion/Loading'
-import Posted from '@/app/components/automattion/Posted'
+import PageContent from '@/app/components/automattion/PageContent'
 
-const Page = () => {
-  const status = useSelector((state: RootState) => state.contentCreation.status)
-
-  return (
-    <div className='flex flex-col items-center justify-center h-full'>
-      {status === 'initial' && <IncialCreation />}
-      {status === 'loading' && <Loading />}
-      {status === 'editing' && <Editing />}
-      {status === 'approved' && <Approved />}
-      {status === 'posted' && <Posted />}
-    </div>
-  )
+/** 
+ * Metadatos estáticos para tu página
+ * (válido desde Next.js 13 App Router en adelante).
+ */
+export const metadata: Metadata = {
+  title: 'Automatización de marketing',
+  description: 'Breve descripción de la página.',
+  icons: {
+    icon: '/favicon.ico'
+  },
+  // Ejemplos de campos adicionales
+  openGraph: {
+    title: 'Título Open Graph',
+    description: 'Descripción para redes sociales',
+    url: 'https://midominio.com/your-page',
+    images: [
+      {
+        url: 'https://midominio.com/imagen-og.jpg',
+        width: 800,
+        height: 600
+      }
+    ]
+  }
 }
 
-export default Page
+export default function Page() {
+  return <PageContent />
+}

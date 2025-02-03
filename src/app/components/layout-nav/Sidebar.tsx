@@ -95,8 +95,7 @@ const Sidebar: React.FC<SidebarProps> = ({
       icon: HiUserGroup,
       href: "/clients",
       subItems: [
-        { name: "Client List", href: "/clients/list", icon: FiUser },
-        { name: "Add Client", href: "/clients/add", icon: FiUser },
+        { name: "Client List", href: "/clients", icon: FiUser },
       ],
     },
     {
@@ -261,8 +260,8 @@ const Sidebar: React.FC<SidebarProps> = ({
             <span className="sr-only">Toggle Dark Mode</span>
             <span
               className={`${theme === "dark"
-                  ? "translate-x-6 bg-blue-500"
-                  : "translate-x-1 bg-gray-400"
+                ? "translate-x-6 bg-blue-500"
+                : "translate-x-1 bg-gray-400"
                 } w-5 h-5 transform  rounded-full transition-transform flex items-center justify-center`}
             >
               {theme === "dark" ? (

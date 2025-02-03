@@ -47,12 +47,13 @@ const persistConfig = {
 };
 
 const persistedChatbotReducer = persistReducer(persistConfig, chatbotReducer);
+const persistedContentReducer = persistReducer(persistConfig, contentCreationReducer);
 
 export const store = configureStore({
   reducer: {
     chatbot: persistedChatbotReducer,
     blog: blogReducer,
-    contentCreation: contentCreationReducer,  // Agregamos el slice aquí
+    contentCreation: persistedContentReducer,  // Agregamos el slice aquí
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

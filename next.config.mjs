@@ -27,6 +27,11 @@ const nextConfig = {
         hostname: 'img.daisyui.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'placehold.co',
+        pathname: '/**',
+      },
     ],
   },
 };

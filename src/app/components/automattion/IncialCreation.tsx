@@ -1,16 +1,33 @@
 'use client'
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { startCreation } from '@/redux/contentCreationSlice'; 
+import { startCreation, finishLoading } from '@/redux/contentCreationSlice'; 
+import axios from 'axios';
 
 const IncialCreation = () => {
   const dispatch = useDispatch();
   const [idea, setIdea] = useState('');
 
-  const handleStart = () => {
-    // Aquí podrías guardar la idea en algún estado global antes de empezar el proceso.
+  const handleStart = async () => {
+    // Inicia el estado de carga inmediatamente
     dispatch(startCreation());
-  }
+
+    try {
+      const response = await axios.post(
+        `http://localhost:8000/automation/interact/`,
+        { content: idea }
+      );
+
+      console.log('Respuesta del servidor:', response.data);
+
+      // Una vez que llega la respuesta, finalizamos la carga y pasamos el contenido
+      dispatch(finishLoading(response.data.result));
+    } catch (error) {
+      console.error('Error al enviar la idea al backend:', error);
+      // Manejo de errores: podrías despachar otra acción o manejar el estado para mostrar un mensaje de error
+      // Por ejemplo: dispatch(errorLoading("Hubo un error al generar el contenido"));
+    }
+  };
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100 dark:bg-[#0d0f11] w-full p-4">

@@ -17,6 +17,8 @@ const privateRoutes = [
   '/reports',
   '/client',
   '/landing-page',
+  '/automation',
+  '/automation/marketing',
 ];
 
 
